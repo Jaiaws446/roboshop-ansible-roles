@@ -25,10 +25,10 @@
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
-- name: mongodb setup
-  ansible.builtin.import_role:
-    name: common
-    tasks_from: systemd     
+# - name: mongodb setup
+#   ansible.builtin.import_role:
+#     name: common
+#     tasks_from: systemd     
 
 # - name: start and enable mongodb
 #   ansible.builtin.service:
