@@ -23,12 +23,14 @@
   #   ansible.builtin.debug:
   #     msg: "entries count: {{entries_count}}"
 
-  - name: "load {{component}} data"
+  - name: "load catalogue data"
     ansible.builtin.shell: "mongo --host mongodb.jaiaws446.online < /app/schema/{{component}}.js"       
-    when: products_count.stdout == "0" and component == "catalogue" # keep double quotes      
+    when: products_count.stdout == "0" and component == "catalogue" # keep double quotes   
+    ignore_errors: true  
 
-  - name: "load {{component}} data"
+  - name: "load user data"
     ansible.builtin.shell: "mongo --host mongodb.jaiaws446.online < /app/schema/{{component}}.js"       
     when: users_count.stdout == "0" and component == "user"  # keep double quotes  
+    ignore_errors: true
 
             
