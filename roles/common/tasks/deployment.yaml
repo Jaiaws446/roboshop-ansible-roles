@@ -11,3 +11,4 @@
   ansible.builtin.service:
     path: "/app" 
     state: absent   
+    force: yes
