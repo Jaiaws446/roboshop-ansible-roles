@@ -9,6 +9,6 @@
   tags:
   - deployement
   ansible.builtin.service:
-    path: "/app" 
+    path: "/app"   #if we keep /app it will remove total directory
     state: absent   
     force: yes
